@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>COPROSEC - Barranca</title>
+    <title>{% block titulo %}{% endblock titulo %} COPROSEC - Barranca</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Codisec Municipalidad Provincial de Barranca" name="keywords">
     <meta content="Codisec Municipalidad Provincial de Barranca" name="description">
@@ -35,7 +35,7 @@
                     <div class="d-inline-flex align-items-center">
                         <a class="text-white pr-3" href="">Central Serenazgo</a>
                         <span class="text-white">|</span>
-                        <a class="text-white px-3" href="">900 872 784</a>
+                        <a class="text-white px-3" href="">{{ general.mobile }}</a>
                     </div>
                 </div>
                 <div class="col-md-6 text-center text-lg-right">
@@ -67,7 +67,7 @@
     <div class="container-fluid position-relative nav-bar p-0">
         <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 9;">
             <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0 pl-3 pl-lg-5">
-                <a href="" class="navbar-brand">
+                <a href="{% url "home" %}" class="navbar-brand">
                     <h1 class="m-0 text-secondary"><span class="text-primary">COPRO</span>SEC</h1>
                 </a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -75,7 +75,7 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
                     <div class="navbar-nav ml-auto py-0">
-                        <a href="index.html" class="nav-item nav-link active">Inicio</a>
+                        <a href="{% url "home" %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %} ">Inicio</a>
                         <a href="service.html" class="nav-item nav-link">Normas Legales</a>
                         <a href="pricing.html" class="nav-item nav-link">Plan Provincial</a>
                         <div class="nav-item dropdown">
@@ -85,7 +85,7 @@
                                 <a href="single.html" class="dropdown-item">Acuerdos</a>
                             </div>
                         </div>
-                        <a href="contact.html" class="nav-item nav-link">Actividades</a>
+                        <a href="{% url "activities" %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'activities' %}active{% endif %}">Actividades</a>
                         <a href="contact.html" class="nav-item nav-link">Contáctanos</a>
                     </div>
                 </div>
@@ -114,30 +114,30 @@
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
                 <h4 class="text-white mb-4">Contáctanos</h4>
-                <p><i class="fa fa-map-marker-alt mr-2"></i>Urb. Las Palmeras 2da Etapa s/n, Barranca</p>
-                <p><i class="fa fa-phone-alt mr-2"></i>+51 900 872 784</p>
+                <p><i class="fa fa-map-marker-alt mr-2"></i>{{ general.address }}</p>
+                <p><i class="fa fa-phone-alt mr-2"></i>{{ general.mobile }}</p>
                 <p><i class="fa fa-envelope mr-2"></i>seguridadciudadana @munibarranca.gob.pe</p>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
                 <h4 class="text-white mb-4">Nuestros Enlaces</h4>
                 <div class="d-flex flex-column justify-content-start">
-                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Inicio</a>
+                    <a class="text-white mb-2" href="{% url "home" %}"><i class="fa fa-angle-right mr-2"></i>Inicio</a>
                     <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Normas Legales</a>
                     <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Plan Provincial</a>
                     <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Evaluaciones</a>
                     <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Acuerdos</a>
-                    <a class="text-white" href="#"><i class="fa fa-angle-right mr-2"></i>Contáctanos</a>
+                    <a class="text-white" href="{% url "activities" %}"><i class="fa fa-angle-right mr-2"></i>Actividades</a>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
                 <h4 class="text-white mb-4">Otros Enlaces</h4>
                 <div class="d-flex flex-column justify-content-start">
-                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>CONASEC</a>
-                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Normas Legales</a>
-                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Portal del Estado Peruano</a>
-                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>PCM</a>
-                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Interpol</a>
-                    <a class="text-white" href="#"><i class="fa fa-angle-right mr-2"></i>FONAFUN PNP</a>
+                    <a class="text-white mb-2" href="https://conasec.mininter.gob.pe/" target="_blank"><i class="fa fa-angle-right mr-2"></i>CONASEC</a>
+                    <a class="text-white mb-2" href="https://www.congreso.gob.pe/" target="_blank"><i class="fa fa-angle-right mr-2"></i>Congreso</a>
+                    <a class="text-white mb-2" href="https://www.peru.gob.pe/" target="_blank"><i class="fa fa-angle-right mr-2"></i>Portal del Estado Peruano</a>
+                    <a class="text-white mb-2" href="https://www.gob.pe/pcm" target="_blank"><i class="fa fa-angle-right mr-2"></i>PCM</a>
+                    <a class="text-white mb-2" href="https://www.interpol.int/" target="_blank"><i class="fa fa-angle-right mr-2"></i>Interpol</a>
+                    <a class="text-white" href="http://fonafun.pnp.gob.pe/" target="_blank"><i class="fa fa-angle-right mr-2"></i>FONAFUN PNP</a>
                 </div>
             </div>
         </div>

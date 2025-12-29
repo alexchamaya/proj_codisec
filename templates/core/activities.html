@@ -1,0 +1,79 @@
+{% extends "core/base.html" %}
+
+{% load static %}
+
+{% block titulo %}Actividades | {% endblock titulo %}
+{% block content %}
+
+<!-- Content Start -->
+
+     <!-- Page Header Start -->
+    <div class="page-header container-fluid bg-secondary pt-2 pt-lg-5 pb-2 mb-5">
+        <div class="container py-5">
+            <div class="row align-items-center py-4">
+                <div class="col-md-6 text-center text-md-left">
+                    <h1 class="mb-4 mb-md-0 text-white">Actividades</h1>
+                </div>
+                <div class="col-md-6 text-center text-md-right">
+                    <div class="d-inline-flex align-items-center">
+                        <a class="btn text-white" href="{% url "home" %}">Inicio</a>
+                        <i class="fas fa-angle-right text-white"></i>
+                        <a class="btn text-white disabled" href="">Actividades</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header Start -->
+
+
+    <!-- Detail Start -->
+    <div class="container py-5">
+        <div class="row">
+            <!-- Blog Detail Start -->
+            <div class="col-lg-12">
+                <div class="d-flex flex-column text-left mb-4">
+                    <h6 class="text-primary font-weight-normal text-uppercase mb-3">Consultas Ciudadanas</h6>
+                    <h1 class="mb-4 section-title">¿Qué es una consulta ciudadana?</h1>
+                    <!-- <div class="d-index-flex mb-2">
+                        <span class="mr-3"><i class="fa fa-user text-primary"></i> Admin</span>
+                        <span class="mr-3"><i class="fa fa-folder text-primary"></i> Web Design</span>
+                        <span class="mr-3"><i class="fa fa-comments text-primary"></i> 15</span>
+                    </div> -->
+                </div>
+
+                <div class="mb-5">
+                    <!-- <img class="img-fluid w-100 mb-4" src="img/carousel-1.jpg" alt="Image"> -->
+                    <p>Es el mecanismo a través del cual los representantes de las instituciones que conforman el Comité Distrital de Seguridad Ciudadana del distrito de Barranca (CODISEC), presentan a la población informes sobre la ejecución de actividades programadas en el Plan Local de Seguridad Ciudadana y Convivencia Social del Distrito de Barranca, con el fin de disminuir la criminalidad y delincuencia. Asimismo, sirve para recibir opiniones y sugerencias de los vecinos; identificar las causas, debilidades, vulnerabilidades y fortalezas en materia de seguridad.</p>
+                    <p>El CODISEC – BARRANCA promueve estas Consultas Ciudadanas como una condición de trasparencia y dando cumplimiento al Artículo 28 del Reglamento de la Ley 27933, del Sistema Nacional de Seguridad Ciudadana; por lo que se ha proyectado su realización en diferentes zonas del distrito de Barranca.</p>
+                    <h2 class="mb-4">¿Quiénes pueden asistir?</h2>
+                    <img class="img-fluid w-50 float-left mr-4 mb-3" src="{% static "img/audiencia2.jpg" %}" alt="Image">
+                    <div class="d-flex mb-2">
+                        <i class="fa fa-check text-primary mt-1 mr-2"></i>
+                        <p>Organizaciones vecinales, sociales, religiosas, culturales, educativas y deportivas.</p>
+                    </div>
+                    <div class="d-flex mb-2">
+                        <i class="fa fa-check text-primary mt-1 mr-2"></i>
+                    <p>Coordinadores de las Juntas Vecinales Seguridad Ciudadana e integrantes.</p>
+                    </div>
+                    <div class="d-flex mb-2">
+                        <i class="fa fa-check text-primary mt-1 mr-2"></i>
+                        <p>Entidades del sector comercial y empresarial.</p>
+                    </div>
+                    <div class="d-flex mb-2">
+                        <i class="fa fa-check text-primary mt-1 mr-2"></i>
+                        <p>Vecinos en general.</p>
+                    </div>
+                </div>                
+            </div>
+            <!-- Blog Detail End -->
+
+        </div>
+    </div>
+    <!-- Detail End -->
+
+
+    <!-- Content End -->
+
+
+{% endblock content %}

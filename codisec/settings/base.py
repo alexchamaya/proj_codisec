@@ -28,7 +28,8 @@ BASE_APPS = [
 ]
 
 LOCAL_APPS = [
-    'applications.core',    
+    'applications.core',
+    'applications.general.apps.GeneralConfig', 
 ]
 
 THIRD_APPS = [
@@ -60,6 +61,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'applications.general.processors.ctx_general',
             ],
         },
     },

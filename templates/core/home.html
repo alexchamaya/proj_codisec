@@ -61,7 +61,7 @@
                             <i class="fa fa-2x fa-map-marker-alt text-white m-0 mr-3"></i>
                             <div class="d-flex flex-column">
                                 <h5 class="text-white font-weight-medium">Nos encontramos</h5>
-                                <p class="m-0 text-white">Urb. Las Palmeras 2da Etapa s/n, Barranca</p>
+                                <p class="m-0 text-white">{{ general.address }}</p>
                             </div>
                         </div>
                     </div>
@@ -79,7 +79,7 @@
                             <i class="fa fa-2x fa-phone-alt text-white m-0 mr-3"></i>
                             <div class="d-flex flex-column">
                                 <h5 class="text-white font-weight-medium">Serenazgo</h5>
-                                <p class="m-0 text-white">+51 900 872 784</p>
+                                <p class="m-0 text-white">{{ general.mobile }}</p>
                             </div>
                         </div>
                     </div>
@@ -149,110 +149,34 @@
         </div>
         <!-- Funciones End -->
 
-        <!-- Services Start -->
-        <div class="container-fluid pt-5 pb-3">
-            <div class="container">
-                <h6 class="text-secondary text-uppercase text-center font-weight-medium mb-3">Conformación del COPROSEC 2025</h6>
-                <h1 class="display-4 text-center mb-5">Miembros</h1>
+        <!-- Miembros Start -->
+    <div class="container-fluid pt-5 pb-3">
+        <div class="container">
+            <h6 class="text-secondary text-uppercase text-center font-weight-medium mb-3">Conformación del COPROSEC 2025</h6>
+            <h1 class="display-4 text-center mb-5">Miembros</h1>
                 
-                    <div class="row">
-                        <div class="col-sm-6 pt-3">
-                            <div class="d-flex align-items-center">
-                                <i class="fa fa-check text-primary mr-2"></i>
-                                <p class="text-secondary font-weight-medium m-0">Alcalde Provincial (Presidente)</p>
-                            </div>
-                            <div class="d-flex align-items-center">
-                                <i class="mr-4"></i>
-                                <p class="text-dark m-0">Luis</p>
-                            </div>
+                <div class="row">
+                    {% for miembro in miembros %}
+                    <div class="col-sm-6 pt-3">
+                        <div class="d-flex align-items-center">
+                            <i class="fa fa-check text-primary mr-2"></i>
+                            <p class="text-secondary font-weight-medium m-0">{{miembro.cargo}}</p>
                         </div>
-                        <div class="col-sm-6 pt-3">
-                            <div class="d-flex align-items-center">
-                                <i class="fa fa-check text-primary mr-2"></i>
-                                <p class="text-secondary font-weight-medium m-0">Sub Prefecto Provincial de Barranca</p>
-                            </div>
-                            <div class="d-flex align-items-center">
-                                <i class="mr-4"></i>
-                                <p class="text-dark m-0">Luis</p>
-                            </div>
+                        <div class="d-flex align-items-center">
+                            <i class="mr-4"></i>
+                            <p class="text-dark m-0">{{miembro.nombre}}</p>
                         </div>
-                        <div class="col-sm-6 pt-3">
-                            <div class="d-flex align-items-center">
-                                <i class="fa fa-check text-primary mr-2"></i>
-                                <p class="text-secondary font-weight-medium m-0">Jefe de la DIVPOL - Barranca</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 pt-3">
-                            <div class="d-flex align-items-center">
-                                <i class="fa fa-check text-primary mr-2"></i>
-                                <p class="text-secondary font-weight-medium m-0">Representante del Poder Judicial</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 pt-3">
-                            <div class="d-flex align-items-center">
-                                <i class="fa fa-check text-primary mr-2"></i>
-                                <p class="text-secondary font-weight-medium m-0">Representante del Ministerio Público</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 pt-3">
-                            <div class="d-flex align-items-center">
-                                <i class="fa fa-check text-primary mr-2"></i>
-                                <p class="text-secondary font-weight-medium m-0">Director de la UGEL 16 - Barranca</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 pt-3">
-                            <div class="d-flex align-items-center">
-                                <i class="fa fa-check text-primary mr-2"></i>
-                                <p class="text-secondary font-weight-medium m-0">Director Ejecutivo de la Red de Salud Barranca - Cajatambo</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 pt-3">
-                            <div class="d-flex align-items-center">
-                                <i class="fa fa-check text-primary mr-2"></i>
-                                <p class="text-secondary font-weight-medium m-0">Coordinador Provincial de las Juntas Vecinales de Seguridad Ciudadana</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 pt-3">
-                            <div class="d-flex align-items-center">
-                                <i class="fa fa-check text-primary mr-2"></i>
-                                <p class="text-secondary font-weight-medium m-0">Alcalde Distrital de Paramonga</p>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-6 pt-3">
-                            <div class="d-flex align-items-center">
-                                <i class="fa fa-check text-primary mr-2"></i>
-                                <p class="text-secondary font-weight-medium m-0">Alcalde Distrital de Pativilca</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 pt-3">
-                            <div class="d-flex align-items-center">
-                                <i class="fa fa-check text-primary mr-2"></i>
-                                <p class="text-secondary font-weight-medium m-0">Alcalde Distrital de Supe Pueblo</p>
-                            </div>
-                        </div><div class="col-sm-6 pt-3">
-                            <div class="d-flex align-items-center">
-                                <i class="fa fa-check text-primary mr-2"></i>
-                                <p class="text-secondary font-weight-medium m-0">Alcalde Distrital de Supe Puerto</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 pt-3">
-                            <div class="d-flex align-items-center">
-                                <i class="fa fa-check text-primary mr-2"></i>
-                                <p class="text-secondary font-weight-medium m-0">Promotor del Centro de Emergencia Mujer (CEM) Barranca</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 pt-3">
-                            <div class="d-flex align-items-center">
-                                <i class="fa fa-check text-primary mr-2"></i>
-                                <p class="text-secondary font-weight-medium m-0">Articuladora Territorial Estrategia Multisectorial Barrio Seguro - Chocoy Barranca</p>
-                            </div>
-                        </div>
-                        
-                    </div> 
-            </div>
+                    </div>
+                    {% endfor %}
+                </div> 
+                
         </div>
-        <!-- Services End -->
+    </div>
+<!-- Miembros End -->
 
     <!-- Content End -->
 {% endblock content %}
+
+
+
+        

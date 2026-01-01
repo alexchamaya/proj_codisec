@@ -30,6 +30,7 @@ BASE_APPS = [
 LOCAL_APPS = [
     'applications.core',
     'applications.general.apps.GeneralConfig', 
+    'applications.social.apps.SocialConfig',
 ]
 
 THIRD_APPS = [
@@ -62,6 +63,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'applications.general.processors.ctx_general',
+                'applications.social.processors.ctx_dict_social_links',
             ],
         },
     },

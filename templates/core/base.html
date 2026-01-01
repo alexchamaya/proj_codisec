@@ -40,21 +40,31 @@
                 </div>
                 <div class="col-md-6 text-center text-lg-right">
                     <div class="d-inline-flex align-items-center">
-                        <a class="text-white px-3" href="">
+                        {% if LINK_FACEBOOK %}
+                        <a class="text-white px-3" href="{{LINK_FACEBOOK}}">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a class="text-white px-3" href="">
+                        {% endif %}
+                        {% if LINK_TWITTER %}
+                        <a class="text-white px-3" href="{{LINK_TWITTER}}">
                             <i class="fab fa-twitter"></i>
                         </a>
-                        <a class="text-white px-3" href="">
+                        {% endif %}
+                        {% if LINK_LINKEDIN %}
+                        <a class="text-white px-3" href="{{LINK_LINKEDIN}}">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <a class="text-white px-3" href="">
+                        {% endif %}
+                        {% if LINK_INSTAGRAM %}
+                        <a class="text-white px-3" href="{{LINK_INSTAGRAM}}">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a class="text-white pl-3" href="">
+                        {% endif %}
+                        {% if LINK_YOUTUBE %}
+                        <a class="text-white pl-3" href="{{LINK_YOUTUBE}}">
                             <i class="fab fa-youtube"></i>
                         </a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -106,10 +116,21 @@
                 <a href=""><h1 class="text-secondary mb-3"><span class="text-white">COPRO</span>SEC</h1></a>
                 <p>Comité Provincial de Seguridad Ciudadana - Municipalidad Provincial de Barranca</p>
                 <div class="d-flex justify-content-start mt-4">
-                    <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-instagram"></i></a>
+                    {% if LINK_TWITTER %}
+                    <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="{{LINK_TWITTER}}"><i class="fab fa-twitter"></i></a>
+                    {% endif %}
+                    {% if LINK_FACEBOOK %}
+                    <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="{{LINK_FACEBOOK}}"><i class="fab fa-facebook-f"></i></a>
+                    {% endif %}
+                    {% if LINK_LINKEDIN %}
+                    <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="{{LINK_LINKEDIN}}"><i class="fab fa-linkedin-in"></i></a>
+                    {% endif %}
+                    {% if LINK_INSTAGRAM %}
+                    <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="{{LINK_INSTAGRAM}}"><i class="fab fa-instagram"></i></a>
+                    {% endif %}
+                    {% if LINK_YOUTUBE %}
+                    <a class="btn btn-outline-light rounded-circle text-center px-0" style="width: 38px; height: 38px;" href="{{LINK_YOUTUBE}}"><i class="fab fa-youtube"></i></a>
+                    {% endif %}
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">

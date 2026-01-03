@@ -1,0 +1,65 @@
+{% extends "core/base.html" %}
+
+{% load static %}
+
+{% block titulo %}Normas Legales | {% endblock titulo %}
+{% block content %}
+
+<!-- Content Start -->
+
+    <!-- Page Header Start -->
+    <div class="page-header container-fluid bg-secondary pt-2 pt-lg-5 pb-2 mb-5">
+        <div class="container py-5">
+            <div class="row align-items-center py-4">
+                <div class="col-md-6 text-center text-md-left">
+                    <h1 class="mb-4 mb-md-0 text-white">Normas Legales</h1>
+                </div>
+                <div class="col-md-6 text-center text-md-right">
+                    <div class="d-inline-flex align-items-center">
+                        <a class="btn text-white" href="{% url "home" %}">Inicio</a>
+                        <i class="fas fa-angle-right text-white"></i>
+                        <a class="btn text-white disabled" href="">Normas Legales</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header Start -->
+
+
+    <!-- Table Start -->
+    <div class="container py-5">
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Norma</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col" class="text-center align-middle">Descargar</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for norm in norms %}
+                <tr>
+                    <td>{{ norm.title }}</td>
+                    <td>{{ norm.description }}</td>
+                    <td class="text-center align-middle">
+                        <a href="{{ norm.file.url }}" title="Descargar {{ norm.title }}" target="_blank" rel="noopener" class="pdf-download d-inline-flex align-items-center">
+                            <i class="fas fa-file-pdf fa-2x text-primary" aria-hidden="true"></i>
+                            <span class="sr-only">Descargar {{ norm.title }}</span>
+                        </a>    
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="3">No hay normas legales disponibles.</td>
+                </tr>
+                {% endfor %}
+            </tbody>     
+        </table>
+    </div>
+    <!-- Table End -->
+
+<!-- Content End -->
+
+
+{% endblock content %}

@@ -31,6 +31,9 @@ LOCAL_APPS = [
     'applications.core',
     'applications.general.apps.GeneralConfig', 
     'applications.social.apps.SocialConfig',
+    'applications.legal.apps.LegalConfig',
+    'applications.plan.apps.PlanConfig',
+    'applications.performance.apps.PerformanceConfig',
 ]
 
 THIRD_APPS = [

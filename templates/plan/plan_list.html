@@ -1,0 +1,113 @@
+{% extends "core/base.html" %}
+
+{% load static %}
+
+{% block titulo %}Plan Provincial | {% endblock titulo %}
+{% block content %}
+
+<!-- Content Start -->
+
+<!-- Content Start -->
+
+     <!-- Page Header Start -->
+    <div class="page-header container-fluid bg-secondary pt-2 pt-lg-5 pb-2 mb-5">
+        <div class="container py-5">
+            <div class="row align-items-center py-4">
+                <div class="col-md-6 text-center text-md-left">
+                    <h1 class="mb-4 mb-md-0 text-white">Plan Provincial</h1>
+                </div>
+                <div class="col-md-6 text-center text-md-right">
+                    <div class="d-inline-flex align-items-center">
+                        <a class="btn text-white" href="{% url "home" %}">Inicio</a>
+                        <i class="fas fa-angle-right text-white"></i>
+                        <a class="btn text-white disabled" href="">Plan Provincial</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header Start -->
+
+
+    <!-- Detail Start -->
+    <div class="container py-5">
+        <div class="row">
+            <!-- Blog Detail Start -->
+            <div class="col-lg-12">
+                <div class="d-flex flex-column text-left mb-4">
+                    <h6 class="text-primary font-weight-normal text-uppercase mb-3">Definición</h6>
+                    <h1 class="mb-4 section-title">Plan Provincial de Seguridad Ciudadana de Barranca</h1>
+                    <!-- <div class="d-index-flex mb-2">
+                        <span class="mr-3"><i class="fa fa-user text-primary"></i> Admin</span>
+                        <span class="mr-3"><i class="fa fa-folder text-primary"></i> Web Design</span>
+                        <span class="mr-3"><i class="fa fa-comments text-primary"></i> 15</span>
+                    </div> -->
+                </div>
+
+                <div class="mb-5">
+                    <!-- <img class="img-fluid w-100 mb-4" src="img/carousel-1.jpg" alt="Image"> -->
+                    <p>El Plan Local de Seguridad Ciudadana y Convivencia Social de la provincia de Barranca 2024 es un instrumento de gestión que se orienta al quehacer en materia de seguridad ciudadana en el ámbito distrital, con un enfoque de resultados. Contienen un diagnóstico del problema, establece una visión y visión, objetivos estratégicos y específicos, actividades, indicadores, metas y responsables.</p>
+                    <p>El PLSC de la provincia de Barranca 2024, fue aprobado por los integrantes del CODISEC – BARRANCA, en Sesión Ordinaria realizada el 14 de febrero 2024, mediante del acta del comité.</p>
+                    <p>Dando cumplimiento a lo dispuesto en el Reglamento de la Ley 27933, Ley del Sistema Nacional de Seguridad Ciudadana y a la Directiva Nº 001-2015-IN, sobre los Lineamientos para la Formulación, Aprobación, Ejecución y Evaluación de Planes Locales de los Comités de Seguridad Ciudadana; la Secretaría Técnica del CODISEC – BARRANCA, remitió un ejemplar del Plan Local de Seguridad Ciudadana de Barranca 2024.</p>
+                    
+                    <div class="d-flex flex-column text-left mb-4">
+                        <h6 class="text-primary font-weight-normal text-uppercase mb-3">Finalidad</h6>
+                        <ul>
+                            <li>Contribuir a la mejora de la seguridad ciudadana y convivencia social en la provincia de Barranca, a través de la articulación y coordinación de acciones entre los diferentes actores involucrados en la gestión de la seguridad ciudadana.</li>
+                            <li>Mejorar los niveles de orden y seguridad mediante un trabajo integral y sostenido de los organismos que integran el CODISEC.</li>
+                            <li>Fortalecer el trabajo multisectorial contando con la participación de la comunidad, que permita mejorar los niveles de seguridad ciudadana en el distrito.</li>
+                        </ul>
+                    </div>
+                    <div class="d-flex flex-column text-left mb-4">
+                        <h6 class="text-primary font-weight-normal text-uppercase mb-3">Evaluación del Plan Local</h6>
+                        <p>De acuerdo al Artículo 28, inciso g.- la Secretaría Técnica del CODISEC – BARRANCA, informa trimestralmente y semestralmente a la Dirección General de Seguridad Ciudadana del Ministerio del Interior, al Comité Regional de Seguridad Ciudadana de Lima Provincias y al Comité Provincial de Seguridad Ciudadana, sobre el cumplimiento de las actividades que están programadas en el Plan Local de Seguridad Ciudadana; para su evaluación correspondiente.</p>
+                        <p>Asimismo, el CODISEC de Barranca realizará la evaluación del presente Plan en forma trimestral y semestral, de acuerdo a los Informes que proporcionen a la Secretaría Técnica, la Policía Nacional, Serenazgo y los demás miembros a los que se les ha asignado responsabilidades.</p>
+                    </div>
+                </div>                
+            </div>
+            <!-- Blog Detail End -->
+
+            <!-- Table Start -->
+            <div class="container py-5">
+                <h6 class="text-primary font-weight-normal text-uppercase mb-3">Descargar Documentos</h6>
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Titulo</th>
+                            <th scope="col">Descripción</th>
+                            <th scope="col" class="text-center align-middle">Descargar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for plan in plans %}
+                        <tr>
+                            <td>{{ plan.title }}</td>
+                            <td>{{ plan.description }}</td>
+                            <td class="text-center align-middle">
+                                <a href="{{ plan.file.url }}" title="Descargar {{ plan.title }}" target="_blank" rel="noopener" class="pdf-download d-inline-flex align-items-center">
+                                    <i class="fas fa-file-pdf fa-2x text-primary" aria-hidden="true"></i>
+                                    <span class="sr-only">Descargar {{ plan.title }}</span>
+                                </a>    
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="3">No hay planes disponibles.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>     
+                </table>
+            </div>
+            <!-- Table End -->
+
+        </div>
+    </div>
+    <!-- Detail End -->
+
+
+    <!-- Content End -->    
+
+<!-- Content End -->
+
+
+{% endblock content %}

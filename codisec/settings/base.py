@@ -34,6 +34,7 @@ LOCAL_APPS = [
     'applications.legal.apps.LegalConfig',
     'applications.plan.apps.PlanConfig',
     'applications.performance.apps.PerformanceConfig',
+    'applications.contact',
 ]
 
 THIRD_APPS = [
@@ -121,3 +122,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+
+
+# EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
+# EMAIL_HOST_USER = '30a867445958fe'
+# EMAIL_HOST_PASSWORD = 'd408171a839287'
+# EMAIL_PORT = '2525'

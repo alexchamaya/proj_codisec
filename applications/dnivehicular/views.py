@@ -1,8 +1,12 @@
+from dotenv import load_dotenv
+import os
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from .services import APIServiceDNIVehicular
 from datetime import date, datetime
 from django.utils.dateparse import parse_date
+
+load_dotenv()
 
 class DnivehicularIndexView(TemplateView):
     template_name = 'dnivehicular/resultado.html'
@@ -16,16 +20,16 @@ class DnivehicularIndexView(TemplateView):
         
         if dni and dni.isdigit() and len(dni) == 8:
             # Construir la URL con el DNI capturado
-            base_url = f"http://191.98.173.5/buscarLicenciaConducir?usuario=PNP&clave=123456&tipoDoc=01&nroDoc={dni}"
+            base_url = os.getenv("API_CONSULTA_VEHICULAR") + dni
             api = APIServiceDNIVehicular(base_url=base_url)
             datos = api.consultar_dni_vehicular()
-            print(datos)
+            #print(datos)
         else:
             # Si no hay DNI o no es válido, asignar None
             datos = None
         
         # Agregar los datos al contexto
-        
+        #print(datos)
         context['datos'] = datos
         context['hoy'] = date.today() # Formatear la fecha actual como 'YYYY-MM-DD'
         

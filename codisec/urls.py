@@ -18,14 +18,16 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 
-urlpatterns = [
-    path('', include('applications.core.urls')),
-    path('legal/', include('applications.legal.urls')),
-    path('plan/', include('applications.plan.urls')),
-    path('assessments/', include('applications.performance.urls')),
-    path('agreements/', include('applications.performance.urls')),
-    path('contact/', include('applications.contact.urls')),
-    path('admin/', admin.site.urls),
+urlpatterns = [    
+    path('', include('applications.portal.urls')),
+    path('portal/dnivehicular/', include('applications.dnivehicular.urls')),
+    path('codisec/', include('applications.core.urls')),
+    path('codisec/legal/', include('applications.legal.urls')),
+    path('codisec/plan/', include('applications.plan.urls')),
+    path('codisec/assessments/', include('applications.performance.urls')),
+    path('codisec/agreements/', include('applications.performance.urls')),
+    path('codisec/contact/', include('applications.contact.urls')),
+    path('codisec/admin/', admin.site.urls),
 ]
 
 if settings.DEBUG:

@@ -1,0 +1,168 @@
+{% extends "portal/baseportal.html" %}
+
+{% load static %}
+
+{% block content %}
+
+{% if datos %}
+    <main class="container result-container">
+        <div class="result-card">
+            <div class="result-header">
+                <i class="fas fa-id-card-alt"></i>
+                <h2>Información de la Licencia</h2>
+                
+                
+                {% comment %} {% if estado == 'Vigente' %}
+                    <span class="status-badge active">Vigente</span>
+                {% else %}
+                    <span class="status-badge">Vencida</span>
+                {% endif %} {% endcomment %}
+            </div>
+
+            <div class="result-body">
+                <div class="info-group full-width">
+                    <label>Propietario / Conductor</label>
+                    <p class="data-value">{{datos.Nombre}}</p>
+                    
+                </div>
+
+                <div class="info-grid">
+                    <div class="info-group">
+                        <label>DNI / Documento</label>
+                        <p class="data-value">{{datos.Dni}}</p>
+                    </div>
+                    <div class="info-group">
+                        {% if datos.Categoria %}
+                            <label>Categoria</label>
+                            <p class="data-value highlight">{{datos.Categoria}}</p>
+                        {% else %}
+                            <label>Categoria</label>
+                            <p class="data-value highlight">No disponible</p>
+                        {% endif %}
+                    </div>
+                    <div class="info-group">
+                        {% if datos.Numero %}
+                            <label>Número de Licencia</label>
+                            <p class="data-value">{{datos.Numero}}</p>
+                        {% else %}
+                            <label>Número de Licencia</label>
+                            <p class="data-value">No disponible</p>
+                        {% endif %}
+                    </div>
+                    <div class="info-group">
+                        {% if datos.Restriccion %}
+                            <label>Restricción</label>
+                            <p class="data-value">{{datos.Restriccion}}</p>
+                        {% else %}
+                            <label>Restricción</label>
+                            <p class="data-value">No disponible</p>
+                        {% endif %}
+                    </div>
+                    <div class="info-group">
+                        {% if datos.Emite %}
+                            <label>Fecha de emisión</label>
+                            <p class="data-value">{{datos.Emite}}</p>
+                        {% else %}
+                            <label>Fecha de emisión</label>
+                            <p class="data-value">No disponible</p>
+                        {% endif %}
+                    </div>
+                    <div class="info-group">
+                        {% if datos.Revalida %}
+                            <label>Fecha de revalidación</label>
+                            <p class="data-value">{{datos.Revalida}}</p>
+                        {% else %}
+                            <label>Fecha de revalidación</label>
+                            <p class="data-value">No disponible</p>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="info-group full-width">
+                    {% if datos.EntidadManejo %}
+                        <label>Centro que aprueba el manejo</label>
+                        <p class="data-value">{{datos.EntidadManejo}}</p>
+                    {% else %}
+                        <label>Centro que aprueba el manejo</label>
+                        <p class="data-value">No disponible</p>
+                    {% endif %}
+                </div>
+                <hr>
+                <div class="info-grid">
+                    <div class="info-group">
+                        {% if datos.FechaConducir %}
+                            <label>Fecha de examen de Manejo</label>
+                            <p class="data-value">{{datos.FechaConducir}}</p>
+                        {% else %}
+                            <label>Fecha de examen de Manejo</label>
+                            <p class="data-value">No disponible</p>
+                        {% endif %}
+                    </div>
+                    <div class="info-group">
+                        {% if datos.FechaManejo %}
+                            <label>Fecha de Aprobación de Manejo</label>
+                            <p class="data-value">{{datos.FechaManejo|default:"No disponible"}}</p>    
+                        {% else %} 
+                            <label>Fecha de Aprobación de Manejo</label>
+                            <p class="data-value">No disponible</p>    
+                        {% endif %} 
+                    </div>
+                    <div class="info-group full-width">
+                        {% if datos.EntidadManejo %}
+                            <label>Centro que aprueba el manejo</label>
+                            <p class="data-value">{{datos.EntidadManejo}}</p>
+                        {% else %}
+                            <label>Centro que aprueba el manejo</label>
+                            <p class="data-value">No disponible</p>
+                        {% endif %}
+                    </div>
+                </div>
+                <hr>
+                <h3>CERTIFICADO MEDICO</h3>
+                <div class="info-grid">
+                    <div class="info-group">
+                        {% if datos.EntidadMedico %}
+                            <label>CENTRO MEDICO</label>
+                            <p class="data-value">{{datos.EntidadMedico}}</p>
+                        {% else %}
+                            <label>CENTRO MEDICO</label>
+                            <p class="data-value">No disponible</p>
+                        {% endif %}
+                    </div>
+                    <div class="info-group">
+                        {% if datos.FechaMedico %}
+                            <label>Fecha Certificado Médico</label>
+                            <p class="data-value">{{datos.FechaMedico}}</p>
+                        {% else %}
+                            <label>Fecha Certificado Médico</label>
+                            <p class="data-value">No disponible</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="result-footer">
+                <button onclick="window.print()" class="btn-secondary">
+                    <i class="fas fa-print"></i> Imprimir Constancia
+                </button>
+                <a href="{% url "portal_index" %}" class="btn-back">Nueva Consulta</a>
+            </div>
+        </div>
+    </main>
+{% else %}
+    <main class="container result-container">
+        <div class="result-card">
+            <div class="result-header">
+                <i class="fas fa-exclamation-triangle"></i>
+                <h2>Error en la Consulta</h2>
+            </div>
+            <div class="result-body">
+                <p class="data-value">DNI no proporcionado</p>
+            </div>
+            <div class="result-footer">
+                <a href="{% url "portal_index" %}" class="btn-back">Nueva Consulta</a>
+            </div>
+        </div>
+    </main>
+{% endif %}
+
+{% endblock content %}

@@ -35,6 +35,8 @@ LOCAL_APPS = [
     'applications.plan.apps.PlanConfig',
     'applications.performance.apps.PerformanceConfig',
     'applications.contact',
+    'applications.portal',
+    'applications.dnivehicular',
 ]
 
 THIRD_APPS = [

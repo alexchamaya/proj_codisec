@@ -1,0 +1,303 @@
+:root {
+    --primary: #004a99;
+    --accent: #00c6ff;
+    --facebook: #1877F2;
+    --instagram: #E4405F;
+    --tiktok: #000000;
+    --bg: #f4f7fa;
+    --white: #ffffff;
+    --transition: all 0.3s ease;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg);
+    color: #334155;
+}
+
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+/* Navbar con Enfoque en Redes Sociales */
+.navbar {
+    background: var(--white);
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo { font-size: 1.3rem; color: var(--primary); display: flex; align-items: center; gap: 10px; }
+
+.logo-img { width: 20%; height: auto; }
+
+/* Estilo Profesional de Iconos Sociales */
+.social-header {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: var(--transition);
+}
+
+.facebook { background: var(--facebook); }
+.instagram { background: var(--instagram); }
+.tiktok { background: var(--tiktok); }
+
+.social-icon:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0, 74, 153, 0.9), rgba(0, 45, 94, 0.9)), url('https://via.placeholder.com/1200x400');
+    background-size: cover;
+    color: white;
+    padding: 80px 0 120px;
+    text-align: center;
+}
+
+.hero h1 { font-size: 2.5rem; margin-bottom: 15px; letter-spacing: -1px; }
+
+/* Consultas Rápidas */
+.quick-queries { margin-top: -70px; margin-bottom: 40px; }
+
+.query-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 25px;
+}
+
+.query-card {
+    background: var(--white);
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.query-header { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
+
+.icon-circle {
+    background: #f0f7ff;
+    color: var(--primary);
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+}
+
+.query-box {
+    display: flex;
+    margin-top: 20px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.query-box input {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 1rem;
+}
+
+.query-box button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 0 25px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Services Grid */
+.services-section { padding: 40px 0 80px; }
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+}
+
+.service-card {
+    background: var(--white);
+    padding: 40px 20px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid transparent;
+    transition: var(--transition);
+}
+
+.service-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.main-icon {
+    font-size: 2.5rem;
+    color: #94a3b8;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.service-card:hover .main-icon { color: var(--primary); }
+
+.link { color: var(--primary); text-decoration: none; font-weight: 700; font-size: 0.9rem; }
+
+/* Footer */
+.footer { background: #1e293b; color: white; padding: 50px 0; text-align: center; }
+
+.social-footer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    font-size: 1.5rem;
+}
+
+.social-footer a { color: #94a3b8; transition: var(--transition); }
+.social-footer a:hover { color: white; }
+
+@media (max-width: 600px) {
+    .navbar .container { flex-direction: column; gap: 15px; }
+    .hero h1 { font-size: 1.8rem; }
+}
+
+/* Estilos para la página de Respuesta */
+.result-container {
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.result-card {
+    background: var(--white);
+    width: 100%;
+    max-width: 700px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+}
+
+.result-header {
+    background: var(--primary);
+    color: white;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+}
+
+.result-header i { font-size: 2rem; opacity: 0.8; }
+
+.status-badge {
+    position: absolute;
+    right: 30px;
+    background: #22c55e; /* Verde éxito */
+    padding: 6px 15px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+
+
+.result-body { padding: 40px; }
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.info-group label {
+    display: block;
+    font-size: 0.8rem;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.data-value {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.data-value.highlight { color: var(--primary); font-size: 1.3rem; }
+
+.result-footer {
+    padding: 30px 40px;
+    background: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-secondary {
+    background: #64748b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-back {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Responsivo para móviles */
+@media (max-width: 500px) {
+    .info-grid { grid-template-columns: 1fr; }
+    .result-header { flex-direction: column; text-align: center; }
+    .status-badge { position: relative; right: auto; margin-top: 10px; }
+}
+

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Servicios Digitales - Municipalidad de Barranca</title>
+
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'css/styleportal.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap">
+    <!-- FontAwesome para los iconos de redes sociales -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="{% static 'img/escudo.jpeg' %}" alt="Logo MuniBarranca" class="logo-img">
+                <span>Municipalidad Provincial de <strong>Barranca</strong></span>
+            </div>
+            
+            <!-- <div class="nav-actions">
+                <button class="btn-primary">Sede Electrónica</button>
+            </div> -->
+            <!-- Redes Sociales en el Header -->
+            <div class="social-header">
+                {% if LINK_FACEBOOK %}
+                <a href="{{ LINK_FACEBOOK }}" class="social-icon facebook" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                {% endif %}
+                {% if LINK_INSTAGRAM %}
+                <a href="{{ LINK_INSTAGRAM }}" class="social-icon instagram" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                {% endif %}
+                {% if LINK_TIKTOK %}
+                <a href="{{ LINK_TIKTOK }}" class="social-icon tiktok" title="TikTok" target="_blank"><i class="fab fa-tiktok"></i></a>
+                {% endif %}
+            </div>
+
+            
+        </div>
+    </header>
+
+    {% block content %}
+    {% endblock %}  
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2026 Municipalidad Provincial de Barranca. Conectamos contigo en:</p>
+                <div class="social-footer">
+                    {% if LINK_FACEBOOK %}
+                    <a href="{{ LINK_FACEBOOK }}" target="_blank"><i class="fab fa-facebook"></i></a>
+                    {% endif %}
+                    {% if LINK_INSTAGRAM %}
+                    <a href="{{ LINK_INSTAGRAM }}" target="_blank"><i class="fab fa-instagram"></i></a>
+                    {% endif %}
+                    {% if LINK_TIKTOK %}
+                    <a href="{{ LINK_TIKTOK }}" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
